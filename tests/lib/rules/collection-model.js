@@ -22,7 +22,9 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         "Backbone.Collection.extend({ model: {}});",
         "Backbone.Collection.extend({ initialize: function() { }, model: {} });",
         "var a = Backbone.Collection.extend({ model: {} }); var b = Backbone.Collection.extend({ model: {} });",
-        "Backbone.Models.extend();",
+        "Backbone.Collection.extend({ constructor: function() { Backbone.Collection.apply(this, arguments); }, model: {} });",
+        "Backbone.Collection.extend({ initialize: function() { var a = Backbone.Collection.extend({ model: {} });}, model: {} });",
+        "Backbone.Model.extend();",
         "var a=6 * 7;"
     ],
 
@@ -42,6 +44,10 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         {
             code: "Backbone.Collection.extend({ initialize: function() { var a = { model: {} }; } });",
             errors: 1
-        }       
+        },
+        {
+            code: "Backbone.Collection.extend({ initialize: function() { var a = Backbone.Collection.extend({});}, model: {} });",
+            errors: 1
+        }
     ]
 });
