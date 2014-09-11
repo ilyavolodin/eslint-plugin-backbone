@@ -5,7 +5,7 @@ eslint-plugin-backbone
 
 #List of supported rules
 
-[collection-model](docs/rules/collection-model.md)
-[defaults-on-top](docs/rules/defaults-on-top.md)
-[model-defaults](docs/rules/model-defaults.md)
-[no-native-jquery](docs/rules/no-native-jquery.md)
+* [collection-model](docs/rules/collection-model.md)
+* [defaults-on-top](docs/rules/defaults-on-top.md)
+* [model-defaults](docs/rules/model-defaults.md)
+* [no-native-jquery](docs/rules/no-native-jquery.md)
