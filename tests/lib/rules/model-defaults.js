@@ -22,6 +22,8 @@ eslintTester.addRuleTest("lib/rules/model-defaults", {
         "Backbone.Model.extend({ defaults: {}});",
         "Backbone.Model.extend({ initialize: function() { }, defaults: {} });",
         "var a = Backbone.Model.extend({ defaults: {} }); var b = Backbone.Models.extend({ defaults: {} });",
+        "Backbone.Model.extend({ constructor: function() { Backbone.Model.apply(this, arguments); }, defaults: {} });",
+        "Backbone.Model.extend({ initialize: function() { var a = Backbone.Model.extend({ defaults: {} });}, defaults: {} });",
         "Backbone.Models.extend();",
         "var a=6 * 7;"
     ],
@@ -37,6 +39,10 @@ eslintTester.addRuleTest("lib/rules/model-defaults", {
         },
         {
             code: "Backbone.Model.extend({ initialize: function() { var a = { defaults: {} }; } });",
+            errors: 1
+        },
+        {
+            code: "Backbone.Model.extend({ initialize: function() { var a = Backbone.Model.extend({});}, defaults: {} });",
             errors: 1
         }
     ]
