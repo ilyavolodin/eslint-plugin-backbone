@@ -1,11 +1,40 @@
-exports.isBackboneModel = function(node) {
-	return node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "Model";
+function isBackboneModel(node) {
+	"use strict";
+	return node.type === "CallExpression" && node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "Model";
+}
+
+function isBackboneView(node) {
+	"use strict";
+	return node.type === "CallExpression" && node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "View";
+}
+
+function isBackboneCollection(node) {
+	"use strict";
+	return node.type === "CallExpression" && node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "Collection";
+}
+
+function isBackboneAny(node) {
+	"use strict";
+	return node.type === "CallExpression" && node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" &&
+		(node.callee.object.property.name === "Collection" || node.callee.object.property.name === "View" || node.callee.object.property.name === "Model");
+}
+
+exports.isBackboneAny = isBackboneAny;
+exports.isBackboneModel = isBackboneModel;
+exports.isBackboneView = isBackboneView;
+exports.isBackboneCollection = isBackboneCollection;
+
+exports.checkIfPropertyInBackbone = function(node) {
+	var parent = node.parent, grandparent = parent.parent, greatgrandparent = grandparent.parent;
+	return isBackboneAny(greatgrandparent);
 };
 
-exports.isBackboneView = function(node) {
-	return node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "View";
+exports.checkIfPropertyInBackboneModel = function(node) {
+	var parent = node.parent, grandparent = parent.parent, greatgrandparent = grandparent.parent;
+	return isBackboneModel(greatgrandparent);	
 };
 
-exports.isBackboneCollection = function(node) {
-	return node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && node.callee.object.object.name === "Backbone" && node.callee.object.property.name === "Collection";
+exports.checkIfPropertyInBackboneCollection = function(node) {
+	var parent = node.parent, grandparent = parent.parent, greatgrandparent = grandparent.parent;
+	return isBackboneCollection(greatgrandparent);
 };

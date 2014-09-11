@@ -1,5 +1,5 @@
 /**
- * @fileoverview require all models to have defaults section
+ * @fileoverview Prevent overloading of constructor
  * @author Ilya Volodin
  */
 "use strict";
@@ -16,27 +16,26 @@ var eslint = require("eslint").linter,
 //------------------------------------------------------------------------------
 
 var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/model-defaults", {
+eslintTester.addRuleTest("lib/rules/no-constructor", {
 
     valid: [
-        "Backbone.Model.extend({ defaults: {}});",
-        "Backbone.Model.extend({ initialize: function() { }, defaults: {} });",
-        "var a = Backbone.Model.extend({ defaults: {} }); var b = Backbone.Models.extend({ defaults: {} });",
-        "Backbone.Models.extend();",
-        "var a=6 * 7;"
+        "Backbone.Model.extend({ initialize: function() { } });",
+        "Backbone.View.extend({ initialize: function() { } });",
+        "Backbone.Collection.extend({ initialize: function() { } });",
+        "Backbone.Model.extend({ initialize: function() { var a = { constructor: function() { } }; } });"
     ],
 
     invalid: [
         {
-            code: "Backbone.Model.extend({});",
+            code: "Backbone.Model.extend({ constructor: function() {} });",
             errors: 1
         },
         {
-            code: "var a = Backbone.Model.extend({}); var b = Backbone.Model.extend({ defaults: {} });",
+            code: "Backbone.View.extend({ constructor: function() {} });",
             errors: 1
         },
         {
-            code: "Backbone.Model.extend({ initialize: function() { var a = { defaults: {} }; } });",
+            code: "Backbone.Collection.extend({ constructor: function() {} });",
             errors: 1
         }
     ]

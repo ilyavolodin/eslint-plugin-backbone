@@ -38,6 +38,10 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         {
             code: "var a = Backbone.Collection.extend({}); var b = Backbone.Collection.extend();",
             errors: 2
-        }        
+        },
+        {
+            code: "Backbone.Collection.extend({ initialize: function() { var a = { model: {} }; } });",
+            errors: 1
+        }       
     ]
 });

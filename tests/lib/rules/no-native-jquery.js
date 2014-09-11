@@ -23,7 +23,8 @@ eslintTester.addRuleTest("lib/rules/no-native-jquery", {
         "Backbone.View.extend({ render: function() { var a = this.$('.item').offset(); } });",
         "Backbone.View.extend({ test: function() { return $.isArray(a); } });",
         "Backbone.Model.extend({ initialize: function() { var a = $('.item').offset(); } });",
-        "var a = 6 * 7;"
+        "var a = 6 * 7;",
+        "var a = $('.item').offset();"
     ],
 
     invalid: [
