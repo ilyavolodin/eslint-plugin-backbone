@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ilyavolodin/eslint-plugin-backbone.svg)](http://travis-ci.org/ilyavolodin/eslint-plugin-backbone)
+
 eslint-plugin-backbone
 ======================
 
