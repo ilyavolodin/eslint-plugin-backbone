@@ -9,6 +9,7 @@ eslint-plugin-backbone
 
 * [collection-model](docs/rules/collection-model.md)
 * [defaults-on-top](docs/rules/defaults-on-top.md)
+* [events-on-top](docs/rules/events-on-top.md)
 * [model-defaults](docs/rules/model-defaults.md)
 * [no-constructor](docs/rules/no-constructor.md)
 * [no-native-jquery](docs/rules/no-native-jquery.md)

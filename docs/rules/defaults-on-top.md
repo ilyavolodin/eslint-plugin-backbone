@@ -7,7 +7,6 @@ If defaults are declared on the model, they should be declared as the very first
 The following patterns are considered warnings:
 
 ```js
-
 Backbone.Model.extend({
     initialize: function() {
         ...

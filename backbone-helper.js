@@ -38,6 +38,11 @@ exports.checkIfPropertyInBackboneModel = function(node) {
 	return isBackboneModel(greatgrandparent);	
 };
 
+exports.checkIfPropertyInBackboneView = function(node) {
+	var parent = node.parent, grandparent = parent.parent, greatgrandparent = grandparent.parent;
+	return isBackboneView(greatgrandparent);	
+};
+
 exports.checkIfPropertyInBackboneCollection = function(node) {
 	var parent = node.parent, grandparent = parent.parent, greatgrandparent = grandparent.parent;
 	return isBackboneCollection(greatgrandparent);
