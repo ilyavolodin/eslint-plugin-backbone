@@ -1,5 +1,5 @@
 /**
- * @fileoverview Require defaults to be on top of the model
+ * @fileoverview Events should be the first thing registered in the View
  * @author Ilya Volodin
  */
 "use strict";
@@ -16,18 +16,18 @@ var eslint = require("eslint").linter,
 //------------------------------------------------------------------------------
 
 var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/defaults-on-top", {
+eslintTester.addRuleTest("lib/rules/events-on-top", {
 
     valid: [
-        "Backbone.Model.extend({ defaults: {}, initialize: function() {} });",
-        "Backbone.Model.extend({ });",
-        "Backbone.Model.extend({ initialize: function() {} });",
-        "Backbone.Model.extend({ initialize: function() { var defaults = {}; } });"
+        "Backbone.View.extend({ events: {}, initialize: function() {} });",
+        "Backbone.View.extend({ });",
+        "Backbone.View.extend({ initialize: function() {} });",
+        "Backbone.View.extend({ initialize: function() { var events = {}; } });"
     ],
 
     invalid: [
         {
-            code: "Backbone.Model.extend({ initialize: function() {}, defaults: {} });", errors: 1
+            code: "Backbone.View.extend({ initialize: function() {}, events: {} });", errors: 1
         }
     ]
 });
