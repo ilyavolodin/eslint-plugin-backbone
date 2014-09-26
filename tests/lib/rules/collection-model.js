@@ -28,6 +28,7 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         "var a = 6 * 7;",
         { code: "TestCollection.extend({ model: {}});", settings: { backbone: { Collection: ["TestCollection"] } } },
         { code: "Backbone.NestedCollection.extend({ model: {}});", settings: { backbone: { Collection: ["Backbone.NestedCollection"] } } },
+        { code: "Backbone.Collection.extend({ model: {}});", settings: { backbone: { Collection: ["Backbone.NestedCollection"] } } }
     ],
 
     invalid: [

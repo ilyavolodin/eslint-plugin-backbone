@@ -3,7 +3,13 @@ function isBackboneBase(node, settings) {
 	var prefixes = settings.Collection.concat(settings.Model, settings.View).map(function(item) {
 		return item.prefix;
 	});
-	return node.type === "CallExpression" && node.callee.type === "MemberExpression" && node.callee.object.type === "MemberExpression" && prefixes.indexOf(node.callee.object.object.name) > -1 && node.callee.property.name === "extend";
+	return node.type === "CallExpression" &&
+		node.callee.type === "MemberExpression" &&
+		(
+			(node.callee.object.type === "MemberExpression" && prefixes.indexOf(node.callee.object.object.name) > -1) ||
+			(node.callee.object.type === "Identifier" && prefixes.indexOf(node.callee.object.name) > -1)
+		) &&
+		node.callee.property.name === "extend";
 }
 
 function isBackboneModel(node, settings) {
@@ -33,7 +39,7 @@ function isBackboneAny(node, settings) {
 function checkForBackboneType(settings, object) {
 	"use strict";
 	return settings.some(function(item) { 
-		return item.postfix ? item.postfix === object.property.name : item.prefix === object.object.name;
+		return item.postfix ? item.postfix === object.property.name : item.prefix === object.name;
 	});
 }
 
