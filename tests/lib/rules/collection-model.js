@@ -25,7 +25,10 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         "Backbone.Collection.extend({ constructor: function() { Backbone.Collection.apply(this, arguments); }, model: {} });",
         "Backbone.Collection.extend({ initialize: function() { var a = Backbone.Collection.extend({ model: {} });}, model: {} });",
         "Backbone.Model.extend();",
-        "var a=6 * 7;"
+        "var a = 6 * 7;",
+        { code: "TestCollection.extend({ model: {}});", settings: { backbone: { Collection: ["TestCollection"] } } },
+        { code: "Backbone.NestedCollection.extend({ model: {}});", settings: { backbone: { Collection: ["Backbone.NestedCollection"] } } },
+        { code: "Backbone.Collection.extend({ model: {}});", settings: { backbone: { Collection: ["Backbone.NestedCollection"] } } }
     ],
 
     invalid: [
@@ -48,6 +51,21 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
         {
             code: "Backbone.Collection.extend({ initialize: function() { var a = Backbone.Collection.extend({});}, model: {} });",
             errors: 1
+        },
+        {
+            code: "Backbone.NestedCollection.extend({ initialize: function() { } });",
+            settings: { backbone: { Collection: ["Backbone.NestedCollection"] } },
+            errors: 1
+        },
+        {
+            code: "TestCollection.extend({ initialize: function() { var a = { model: {} }; } });",
+            settings: { backbone: { Collection: ["TestCollection"] } },
+            errors: 1
+        },
+        {
+            code: "Backbone.Collection.extend({ initialize: function() { var a = { model: {} }; } }); TestCollection.extend({ initialize: function() {} });",
+            settings: { backbone: { Collection: ["TestCollection"] } },
+            errors: 2
         }
     ]
 });
