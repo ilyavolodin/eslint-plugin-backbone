@@ -20,7 +20,8 @@ npm install eslint@">=0.8.2" --save-dev
 
 eslint-plugin-backbone requires `ESLint` with version greater then 0.8.1 or 0.8.2 if you would like to use your own base models.
 
-## Install Backbone plugins. If you installed `ESLint` globally, you have to install Backbone plugin globally too. Otherwise, install it locally.
+## Install Backbone plugins.
+If you installed `ESLint` globally, you have to install Backbone plugin globally too. Otherwise, install it locally.
 
 ```bash
 
