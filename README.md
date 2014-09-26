@@ -39,9 +39,9 @@ Add `plugins` section and specify eslint-plugin-backbone as a plugin
 ```json
 
 {
-    "plugins": {
+    "plugins": [
         "backbone"
-    }
+    ]
 }
 ```
 
