@@ -82,4 +82,5 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [events-on-top](docs/rules/events-on-top.md)
 * [model-defaults](docs/rules/model-defaults.md)
 * [no-constructor](docs/rules/no-constructor.md)
+* [no-el-assign](docs/rules/no-el-assign.md)
 * [no-native-jquery](docs/rules/no-native-jquery.md)
