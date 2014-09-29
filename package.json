@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-backbone",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Eslint rules for Backbone.",
     "main": "index.js",
     "scripts": {
