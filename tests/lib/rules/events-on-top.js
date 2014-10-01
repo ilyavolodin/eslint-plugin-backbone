@@ -22,12 +22,22 @@ eslintTester.addRuleTest("lib/rules/events-on-top", {
         "Backbone.View.extend({ events: {}, initialize: function() {} });",
         "Backbone.View.extend({ });",
         "Backbone.View.extend({ initialize: function() {} });",
-        "Backbone.View.extend({ initialize: function() { var events = {}; } });"
+        "Backbone.View.extend({ initialize: function() { var events = {}; } });",
+        { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {} });", args: [1, ["tagName", "className"]] }
     ],
 
     invalid: [
         {
             code: "Backbone.View.extend({ initialize: function() {}, events: {} });", errors: 1
+        },
+        {
+            code: "Backbone.View.extend({ initialize: function() {}, tagName: 'div', 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
+        },
+        {
+            code: "Backbone.View.extend({ tagName: 'div', initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
+        },
+        {
+            code: "Backbone.View.extend({ render: function() {}, initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
         }
     ]
 });

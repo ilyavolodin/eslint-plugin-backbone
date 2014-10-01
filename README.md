@@ -55,7 +55,8 @@ Enable all of the rules that you would like to use
         "backbone/defaults-on-top": 1,
         "backbone/model-defaults": 1,
         "backbone/no-constructor": 1,
-        "backbone/no-native-jquery": 1
+        "backbone/no-native-jquery": 1,
+        ...
     }
 }
 ```
