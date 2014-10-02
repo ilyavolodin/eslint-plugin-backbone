@@ -37,7 +37,7 @@ This rule accepts an array op strings that would be excluded from the check. For
 ```json
 
 "rules" : {
-    "backbone/events-on-top": [1, ['tagName', 'className']],
+    "backbone/events-on-top": [1, ["tagName", "className"]],
     ...
 }
 

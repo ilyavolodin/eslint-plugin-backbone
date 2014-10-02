@@ -81,6 +81,7 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [collection-model](docs/rules/collection-model.md)
 * [defaults-on-top](docs/rules/defaults-on-top.md)
 * [events-on-top](docs/rules/events-on-top.md)
+* [initialize-on-top](docs/rules/initialize-on-top.md)
 * [model-defaults](docs/rules/model-defaults.md)
 * [no-changed-set](/docs/rules/no-changed-set.md)
 * [no-collection-models](/docs/rules/no-collection-models.md)
