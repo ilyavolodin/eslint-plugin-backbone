@@ -4,6 +4,7 @@ module.exports = {
     rules: {
         "collection-model": require("./lib/rules/collection-model"),
         "defaults-on-top": require("./lib/rules/defaults-on-top"),
+        "event-scope": require("./lib/rules/event-scope"),
         "events-on-top": require("./lib/rules/events-on-top"),
         "initialize-on-top": require("./lib/rules/initialize-on-top"),
         "model-defaults": require("./lib/rules/model-defaults"),
