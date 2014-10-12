@@ -8,7 +8,11 @@ The following patterns are considered warnings:
 
 ```js
 
-Backbone.Model.extend({ initialize: function() { this.on('change', this.modelChanged); } });
+Backbone.Model.extend({
+    initialize: function() {
+        this.on('change', this.modelChanged); 
+    }
+});
 
 ```
 
@@ -16,7 +20,11 @@ The following patterns are not warnings:
 
 ```js
 
-Backbone.Model.extend({ initialize: function() { this.on('change', this.modelChanged, this); } });
+Backbone.Model.extend({
+    initialize: function() {
+        this.on('change', this.modelChanged, this);
+    }
+});
 
 ```
 

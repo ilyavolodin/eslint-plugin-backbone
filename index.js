@@ -14,6 +14,7 @@ module.exports = {
         "no-el-assign": require("./lib/rules/no-el-assign"),
         "no-model-attributes": require("./lib/rules/no-model-attributes"),
         "no-native-jquery": require("./lib/rules/no-native-jquery"),
+        "no-silent": require("./lib/rules/no-silent"),
         "no-view-collection-models": require("./lib/rules/no-view-collection-models"),
         "no-view-model-attributes": require("./lib/rules/no-view-model-attributes")
     }
