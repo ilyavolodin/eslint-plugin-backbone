@@ -90,5 +90,6 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [no-el-assign](docs/rules/no-el-assign.md)
 * [no-model-attributes](docs/rules/no-model-attributes.md)
 * [no-native-jquery](docs/rules/no-native-jquery.md)
+* [no-silent](docs/rules/no-silent.md)
 * [no-view-collection-models](docs/rules/no-view-collection-models.md)
 * [no-view-model-attributes](docs/rules/no-view-model-attributes.md)
