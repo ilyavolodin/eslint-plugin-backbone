@@ -16,6 +16,7 @@ module.exports = {
         "no-native-jquery": require("./lib/rules/no-native-jquery"),
         "no-silent": require("./lib/rules/no-silent"),
         "no-view-collection-models": require("./lib/rules/no-view-collection-models"),
-        "no-view-model-attributes": require("./lib/rules/no-view-model-attributes")
+        "no-view-model-attributes": require("./lib/rules/no-view-model-attributes"),
+        "render-return": require("./lib/rules/render-return")
     }
 };

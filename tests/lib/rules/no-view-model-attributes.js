@@ -28,19 +28,19 @@ eslintTester.addRuleTest("lib/rules/no-view-model-attributes", {
     invalid: [
         {
             code: "Backbone.View.extend({ render: function() { alert(this.model.attributes[0]); } });",
-            errors: 1
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" } ]
         },
         {
             code: "Backbone.View.extend({ render: function() { this.model.attributes[0] = 'test'; } });",
-            errors: 1
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" } ]
         },
         {
-            code: "Backbone.View.extend({ render: function() { _.first(this.model.attributes) = 'test'; } });",
-            errors: 1
+            code: "Backbone.View.extend({ render: function() { _.first(this.model.attributes); } });",
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" } ]
         },
         {
             code: "Backbone.View.extend({ render: function() { this.model.attributes[0] = 'test'; this.model.attributes[1] = 'test'; } });",
-            errors: 2
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" }, { message: "Do not access attributes directly. Use set() and get() instead" } ]
         }
     ]
 });

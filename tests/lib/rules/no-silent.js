@@ -30,31 +30,31 @@ eslintTester.addRuleTest("lib/rules/no-silent", {
     invalid: [
         {
             code: "Backbone.Model.extend({ intialize: function() { this.set('test', 'test', {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Model.extend({ intialize: function() { this.unset('test', {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Collection.extend({ intialize: function() { this.reset([], {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Model.extend({ intialize: function() { this.clear({silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Collection.extend({ intialize: function() { this.remove(model, {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Collection.extend({ intialize: function() { this.add(model, {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         },
         {
             code: "Backbone.Model.extend({ intialize: function() { this.collection.push({}, {silent:true}); } });",
-            errors: 1
+            errors: [ { message: "Do not silence events." } ]
         }
     ]
 });

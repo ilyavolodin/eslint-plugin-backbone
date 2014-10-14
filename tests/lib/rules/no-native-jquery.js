@@ -30,15 +30,15 @@ eslintTester.addRuleTest("lib/rules/no-native-jquery", {
     invalid: [
         {
             code: "Backbone.View.extend({ render: function() { var a = $('.item').offset(); } });",
-            errors: 1
+            errors: [ { message: "Use this.$ instead of $ in views" } ]
         },
         {
             code: "var a = Backbone.View.extend({ render: function() { var a = $('.item').offset(); } }); var b = Backbone.View.extend({ render: function() { var a = this.$('.item').offset() } });",
-            errors: 1
+            errors: [ { message: "Use this.$ instead of $ in views" } ]
         },
         {
             code: "Backbone.View.extend({ initialize: function() { Backbone.View.apply(this, arguments); var a = $('.item').offset(); } });",
-            errors: 1
+            errors: [ { message: "Use this.$ instead of $ in views" } ]
         }
     ]
 });

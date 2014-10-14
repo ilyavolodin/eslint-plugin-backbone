@@ -28,12 +28,12 @@ eslintTester.addRuleTest("lib/rules/no-changed-set", {
     invalid: [
         {
             code: "Backbone.View.extend({ render: function() { this.model.changed = false; } });",
-            errors: 1
+            errors: [ { message: "Do not assign changed property of the model directly." } ]
         },
         {
             code: "Test.extend({ someFunction: function() { this.model.changed = false; } });",
             settings: { backbone: { View: ["Test"]}},
-            errors: 1
+            errors: [ { message: "Do not assign changed property of the model directly." } ]
         }
     ]
 });

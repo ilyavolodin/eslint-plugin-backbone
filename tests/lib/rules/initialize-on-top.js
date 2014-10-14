@@ -34,31 +34,31 @@ eslintTester.addRuleTest("lib/rules/initialize-on-top", {
     invalid: [
         {
             code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the view." } ]
         },
         {
             code: "Backbone.Collection.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["className", "events"], Collection: ["tagName"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the collection." } ]
         },
         {
             code: "Backbone.Model.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["tagName", "className", "events"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the model." } ]
         },
         {
             code: "Backbone.View.extend({ tagName: 'div', initialize: function() {} });",
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top." } ]
         },
         {
             code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { Model: ["defaults"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the view." } ]
         },
         {
             code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the model." } ]
         },
         {
             code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
-            errors: 1
+            errors: [ { message: "Initialize should be declared at the top of the collection." } ]
         }
     ]
 });

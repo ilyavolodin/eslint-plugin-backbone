@@ -29,11 +29,11 @@ eslintTester.addRuleTest("lib/rules/event-scope", {
     invalid: [
         {
             code: "Backbone.View.extend({ initialize: function() { this.model.on('change', this.modelChanged); } });",
-            errors: 1
+            errors: [ { message: "Pass scope as third argument." } ]
         },
         {
             code: "Backbone.Model.extend({ initialize: function() { this.model.once('change', this.modelChanged); } })",
-            errors: 1
+            errors: [ { message: "Pass scope as third argument." } ]
         }
     ]
 });
