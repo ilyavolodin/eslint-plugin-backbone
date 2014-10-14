@@ -28,15 +28,15 @@ eslintTester.addRuleTest("lib/rules/no-constructor", {
     invalid: [
         {
             code: "Backbone.Model.extend({ constructor: function() {} });",
-            errors: 1
+            errors: [ { message: "Overload initialize instead of constructor" } ]
         },
         {
             code: "Backbone.View.extend({ constructor: function() {} });",
-            errors: 1
+            errors: [ { message: "Overload initialize instead of constructor" } ]
         },
         {
             code: "Backbone.Collection.extend({ constructor: function() {} });",
-            errors: 1
+            errors: [ { message: "Overload initialize instead of constructor" } ]
         }
     ]
 });

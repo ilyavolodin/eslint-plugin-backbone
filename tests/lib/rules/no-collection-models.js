@@ -28,11 +28,11 @@ eslintTester.addRuleTest("lib/rules/no-collection-models", {
     invalid: [
         {
             code: "Backbone.Collection.extend({ initialize: function() { this.models.length; } });",
-            errors: 1
+            errors: [ { message: "Do not access models directly. Use get() and at() instead" } ]
         },
         {
             code: "Backbone.Collection.extend({ initialize: function() { this.models.push({}); } });",
-            errors: 1
+            errors: [ { message: "Do not access models directly. Use get() and at() instead" } ]
         }
     ]
 });

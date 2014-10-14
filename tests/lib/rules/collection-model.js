@@ -34,38 +34,38 @@ eslintTester.addRuleTest("lib/rules/collection-model", {
     invalid: [
         {
             code: "Backbone.Collection.extend({});",
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "var a = Backbone.Collection.extend({}); var b = Backbone.Collection.extend({ model: {} });",
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "var a = Backbone.Collection.extend({}); var b = Backbone.Collection.extend();",
-            errors: 2
+            errors: [ { message: "All collections should have model declared" }, { message: "All collections should have model declared"} ]
         },
         {
             code: "Backbone.Collection.extend({ initialize: function() { var a = { model: {} }; } });",
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "Backbone.Collection.extend({ initialize: function() { var a = Backbone.Collection.extend({});}, model: {} });",
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "Backbone.NestedCollection.extend({ initialize: function() { } });",
             settings: { backbone: { Collection: ["Backbone.NestedCollection"] } },
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "TestCollection.extend({ initialize: function() { var a = { model: {} }; } });",
             settings: { backbone: { Collection: ["TestCollection"] } },
-            errors: 1
+            errors: [ { message: "All collections should have model declared" } ]
         },
         {
             code: "Backbone.Collection.extend({ initialize: function() { var a = { model: {} }; } }); TestCollection.extend({ initialize: function() {} });",
             settings: { backbone: { Collection: ["TestCollection"] } },
-            errors: 2
+            errors: [ { message: "All collections should have model declared" }, { message: "All collections should have model declared"} ]
         }
     ]
 });

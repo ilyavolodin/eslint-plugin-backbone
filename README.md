@@ -93,3 +93,4 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [no-silent](docs/rules/no-silent.md)
 * [no-view-collection-models](docs/rules/no-view-collection-models.md)
 * [no-view-model-attributes](docs/rules/no-view-model-attributes.md)
+* [render-return](docs/rules/render-return.md)

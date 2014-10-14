@@ -32,19 +32,19 @@ eslintTester.addRuleTest("lib/rules/model-defaults", {
     invalid: [
         {
             code: "Backbone.Model.extend({});",
-            errors: 1
+            errors: [ { message: "All models should have defaults declared" } ]
         },
         {
             code: "var a = Backbone.Model.extend({}); var b = Backbone.Model.extend({ defaults: {} });",
-            errors: 1
+            errors: [ { message: "All models should have defaults declared" } ]
         },
         {
             code: "Backbone.Model.extend({ initialize: function() { var a = { defaults: {} }; } });",
-            errors: 1
+            errors: [ { message: "All models should have defaults declared" } ]
         },
         {
             code: "Backbone.Model.extend({ initialize: function() { var a = Backbone.Model.extend({});}, defaults: {} });",
-            errors: 1
+            errors: [ { message: "All models should have defaults declared" } ]
         }
     ]
 });

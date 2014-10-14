@@ -27,10 +27,12 @@ eslintTester.addRuleTest("lib/rules/no-el-assign", {
 
     invalid: [
         {
-            code: "Backbone.View.extend({ initialize: function() { this.$el = $('.test'); } });", errors: 1
+            code: "Backbone.View.extend({ initialize: function() { this.$el = $('.test'); } });",
+            errors: [ { message: "Do not assign '$el' directly. Use setElement() instead" } ]
         },
         {
-            code: "Test.extend({ initialize: function() { this.el = $('.test')[0]; } });", settings: { backbone: { View: ["Test"] }}, errors: 1
+            code: "Test.extend({ initialize: function() { this.el = $('.test')[0]; } });", settings: { backbone: { View: ["Test"] }},
+            errors: [ { message: "Do not assign 'el' directly. Use setElement() instead" } ]
         }
     ]
 });

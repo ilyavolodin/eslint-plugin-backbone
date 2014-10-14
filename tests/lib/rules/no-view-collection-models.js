@@ -28,19 +28,19 @@ eslintTester.addRuleTest("lib/rules/no-view-collection-models", {
     invalid: [
         {
             code: "Backbone.View.extend({ render: function() { alert(this.model.models.length); } });",
-            errors: 1
+            errors: [ { message: "Do not access models directly. Use get() and at() methods instead." } ]
         },
         {
             code: "Backbone.View.extend({ render: function() { this.collection.models[0] = 'test'; } });",
-            errors: 1
+            errors: [ { message: "Do not access models directly. Use get() and at() methods instead." } ]
         },
         {
-            code: "Backbone.View.extend({ render: function() { _.first(this.model.models) = 'test'; } });",
-            errors: 1
+            code: "Backbone.View.extend({ render: function() { _.first(this.model.models); } });",
+            errors: [ { message: "Do not access models directly. Use get() and at() methods instead." } ]
         },
         {
             code: "Backbone.View.extend({ render: function() { this.model.models[0] = 'test'; this.collection.models[1] = 'test'; } });",
-            errors: 2
+            errors: [ { message: "Do not access models directly. Use get() and at() methods instead." }, { message: "Do not access models directly. Use get() and at() methods instead." } ]
         }
     ]
 });

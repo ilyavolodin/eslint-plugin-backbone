@@ -27,7 +27,8 @@ eslintTester.addRuleTest("lib/rules/defaults-on-top", {
 
     invalid: [
         {
-            code: "Backbone.Model.extend({ initialize: function() {}, defaults: {} });", errors: 1
+            code: "Backbone.Model.extend({ initialize: function() {}, defaults: {} });",
+            errors: [ { message: "defaults should be declared at the top of the model." } ]
         }
     ]
 });

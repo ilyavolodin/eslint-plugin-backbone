@@ -28,11 +28,11 @@ eslintTester.addRuleTest("lib/rules/no-model-attributes", {
     invalid: [
         {
             code: "Backbone.Model.extend({ initialize: function() { alert(this.attributes); } });",
-            errors: 1
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" } ]
         },
         {
             code: "Backbone.Model.extend({ initialize: function() { _.first(this.attributes); } });",
-            errors: 1
+            errors: [ { message: "Do not access attributes directly. Use set() and get() instead" } ]
         }
     ]
 });

@@ -28,16 +28,20 @@ eslintTester.addRuleTest("lib/rules/events-on-top", {
 
     invalid: [
         {
-            code: "Backbone.View.extend({ initialize: function() {}, events: {} });", errors: 1
+            code: "Backbone.View.extend({ initialize: function() {}, events: {} });",
+            errors: [ { message: "events should be declared at the top of the view." } ]
         },
         {
-            code: "Backbone.View.extend({ initialize: function() {}, tagName: 'div', 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
+            code: "Backbone.View.extend({ initialize: function() {}, tagName: 'div', 'className': 'test', events: {} });", args: [1, ["tagName", "className"]],
+            errors: [ { message: "events should be declared at the top of the view." } ]
         },
         {
-            code: "Backbone.View.extend({ tagName: 'div', initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
+            code: "Backbone.View.extend({ tagName: 'div', initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]],
+            errors: [ { message: "events should be declared at the top of the view." } ]
         },
         {
-            code: "Backbone.View.extend({ render: function() {}, initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]], errors: 1
+            code: "Backbone.View.extend({ render: function() {}, initialize: function() {}, 'className': 'test', events: {} });", args: [1, ["tagName", "className"]],
+            errors: [ { message: "events should be declared at the top of the view." } ]
         }
     ]
 });
