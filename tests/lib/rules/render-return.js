@@ -34,6 +34,10 @@ eslintTester.addRuleTest("lib/rules/render-return", {
         {
             code: "Backbone.View.extend({ render: function() { return 1; } });",
             errors: [ { message: "render method should always return 'this'" } ]
+        },
+        {
+            code: "Backbone.View.extend({ render: function() { return; } });",
+            errors: [ { message: "render method should always return 'this'" } ]
         }
     ]
 });
