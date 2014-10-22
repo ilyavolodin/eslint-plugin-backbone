@@ -1,6 +1,6 @@
 # Prevent access to model's attributes collection inside views (no-view-model-attributes)
 
-Instead of accessing `attributes` collection directly from within views, use `get()` or `set()` function. Backbone setters do more then just assign value, they also keep track of when model has been last modified. If you work with `attributes` collection directly, `changed` and `changedAttributes` will not be updated.
+Instead of accessing `attributes` collection directly from within views, use `get()` or `set()` functions. Backbone setters do more then just assign value, they also keep track of when model has been last modified. If you work with `attributes` collection directly, `changed` and `changedAttributes` will not be updated.
 
 
 ## Rule Details

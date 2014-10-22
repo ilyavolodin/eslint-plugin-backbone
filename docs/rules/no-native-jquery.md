@@ -1,6 +1,6 @@
 # Prevent usage of $ in the views (no-native-jquery)
 
-When operating on DOM inside views, you should use this.$ instead of native jQuery. This will limit the scope to the elements to the children of view's element. Views should not operate on DOM outside of it's area of responsibilities. This will lead to confusions and will make large code base hard to debug.
+When operating on DOM inside views, you should use this.$ instead of native jQuery. This will limit the scope to the elements to the children of view's element. Views should not operate on DOM outside of it's area of responsibilities. This will lead to confusion and will make a large code base hard to debug.
 
 ## Rule Details
 

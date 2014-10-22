@@ -1,6 +1,6 @@
 # Prevent assigning el or $el inside views (no-el-assign)
 
-Settings `this.el` or `this.$el` can lead to issues, since Backbone will not automatically bind events to the element. Use `setElement` function instead which will cache a reference to an element and bind all events.
+Setting `this.el` or `this.$el` can cause issues, since Backbone will not automatically bind events to the element. Use `setElement` function instead which will cache a reference to an element and bind all events.
 
 ## Rule Details
 
