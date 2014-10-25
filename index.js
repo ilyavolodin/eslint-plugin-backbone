@@ -18,5 +18,23 @@ module.exports = {
         "no-view-collection-models": require("./lib/rules/no-view-collection-models"),
         "no-view-model-attributes": require("./lib/rules/no-view-model-attributes"),
         "render-return": require("./lib/rules/render-return")
+    },
+    rulesConfig: {
+        "collection-model": 2,
+        "defaults-on-top": 1,
+        "event-scope": 1,
+        "events-on-top": [1, ["tagName", "className"]],
+        "initialize-on-top": [1, { View: ["tagName", "className", "events"], Model: ["defaults", "url", "urlRoot"], Collection: ["model", "url"] }],
+        "model-defaults": 2,
+        "no-changed-set": 2,
+        "no-collection-models": 2,
+        "no-constructor": 1,
+        "no-el-assign": 2,
+        "no-model-attributes": 2,
+        "no-native-jquery": 0,
+        "no-silent": 1,
+        "no-view-collection-models": 2,
+        "no-view-model-attributes": 2,
+        "render-return": 2
     }
 };
