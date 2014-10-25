@@ -32,6 +32,31 @@ or
 npm install eslint-plugin-backbone --save-dev
 ```
 
+## Default configuration
+
+If you are using ESLint >0.9.0 then this plugin will provide default configuration. If you are fine with defaults, you do not need to update your .eslintrc file.
+
+Defaults are currently set to the following:
+
+```json
+    "collection-model": 2,
+    "defaults-on-top": 1,
+    "event-scope": 1,
+    "events-on-top": [1, ["tagName", "className"]],
+    "initialize-on-top": [1, { View: ["tagName", "className", "events"], Model: ["defaults", "url", "urlRoot"], Collection: ["model", "url"] }],
+    "model-defaults": 2,
+    "no-changed-set": 2,
+    "no-collection-models": 2,
+    "no-constructor": 1,
+    "no-el-assign": 2,
+    "no-model-attributes": 2,
+    "no-native-jquery": 0,
+    "no-silent": 1,
+    "no-view-collection-models": 2,
+    "no-view-model-attributes": 2,
+    "render-return": 2
+```
+
 ## Modify .eslintrc for your project
 
 Add `plugins` section and specify eslint-plugin-backbone as a plugin
