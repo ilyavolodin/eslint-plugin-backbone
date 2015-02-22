@@ -28,6 +28,13 @@ Backbone.View.extend({
 
 ```
 
+## Options
+
+This rule supports two modes `all` or `selector`. `all` is the default mode, when on, it will check for any uses of jQuery
+in the view. `selector` will only warn about jQuery selectors that are using literals, as in, if you are passing a string
+into jQuery's `$` function, it will warn you, but if you are passing an object, it will skip over it. `selector` mode is
+useful if you are working with event handlers and need to wrap event's target into jQuery object.
+
 ## When Not To Use It
 
 When writing a small application sometimes it's easier to operate on external elements, instead of creating a new view.

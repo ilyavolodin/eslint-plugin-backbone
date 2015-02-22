@@ -31,7 +31,7 @@ module.exports = {
         "no-constructor": 1,
         "no-el-assign": 2,
         "no-model-attributes": 2,
-        "no-native-jquery": 0,
+        "no-native-jquery": [1, "selector"],
         "no-silent": 1,
         "no-view-collection-models": 2,
         "no-view-model-attributes": 2,
