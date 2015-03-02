@@ -54,6 +54,7 @@ Defaults are currently set to the following:
     "no-silent": 1,
     "no-view-collection-models": 2,
     "no-view-model-attributes": 2,
+    "no-view-onoff-binding": 2,
     "render-return": 2
 ```
 
@@ -118,4 +119,5 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [no-silent](docs/rules/no-silent.md)
 * [no-view-collection-models](docs/rules/no-view-collection-models.md)
 * [no-view-model-attributes](docs/rules/no-view-model-attributes.md)
+* [no-view-onoff-binding](docs/rules/no-view-onoff-binding.md)
 * [render-return](docs/rules/render-return.md)
