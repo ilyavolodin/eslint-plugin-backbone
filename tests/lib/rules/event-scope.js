@@ -23,7 +23,8 @@ eslintTester.addRuleTest("lib/rules/event-scope", {
         "Backbone.Model.extend({ initialize: function() { this.on('change', this.test, this); } });",
         "Backbone.View.extend({ initialize: function() { this.model.on('change', this.test, this); } });",
         "Backbone.View.extend({ initialize: function() { this.$el.on('click', this.test); } });",
-        "Backbone.View.extend({ intiailize: function() { $('test').on('click', this.test); } });"
+        "Backbone.View.extend({ initialize: function() { $('test').on('click', this.test); } });",
+        "Backbone.View.extend({ initialize: function() { this.$('.something').on('change', this.update); } });"
     ],
 
     invalid: [
