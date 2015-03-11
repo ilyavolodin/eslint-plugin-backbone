@@ -122,3 +122,8 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [no-view-model-attributes](docs/rules/no-view-model-attributes.md)
 * [no-view-onoff-binding](docs/rules/no-view-onoff-binding.md)
 * [render-return](docs/rules/render-return.md)
+
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-backbone.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/eslint-plugin-backbone
+[travis-image]: https://img.shields.io/travis/ilyavolodin/eslint-plugin-backbone/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/ilyavolodin/eslint-plugin-backbone
