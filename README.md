@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/ilyavolodin/eslint-plugin-backbone.svg)](http://travis-ci.org/ilyavolodin/eslint-plugin-backbone)
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
 
 eslint-plugin-backbone
 ======================
