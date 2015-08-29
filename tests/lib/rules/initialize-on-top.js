@@ -8,15 +8,15 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint").linter,
-    ESLintTester = require("eslint-tester");
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/initialize-on-top");
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/initialize-on-top", {
+var eslintTester = new RuleTester();
+eslintTester.run("initialize-on-top", rule, {
 
     valid: [
         "Backbone.View.extend({ initialize: function() {} });",
@@ -26,22 +26,22 @@ eslintTester.addRuleTest("lib/rules/initialize-on-top", {
         "Backbone.Collection.extend({ initialize: function() {} });",
         "Backbone.Collection.extend({ });",
         "Backbone.View.extend({ render: function() {} });",
-        { code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", args: [1, { Model: ["defaults"] }] },
-        { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["tagName", "className", "events"] }] },
-        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", args: [1, { Collection: ["model"] }] }
+        { code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", options: [{ Model: ["defaults"] }] },
+        { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["tagName", "className", "events"] }] },
+        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ Collection: ["model"] }] }
     ],
 
     invalid: [
         {
-            code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
+            code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["className", "events"] }],
             errors: [ { message: "Initialize should be declared at the top of the view." } ]
         },
         {
-            code: "Backbone.Collection.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["className", "events"], Collection: ["tagName"] }],
+            code: "Backbone.Collection.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["className", "events"], Collection: ["tagName"] }],
             errors: [ { message: "Initialize should be declared at the top of the collection." } ]
         },
         {
-            code: "Backbone.Model.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { View: ["tagName", "className", "events"] }],
+            code: "Backbone.Model.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["tagName", "className", "events"] }],
             errors: [ { message: "Initialize should be declared at the top of the model." } ]
         },
         {
@@ -49,15 +49,15 @@ eslintTester.addRuleTest("lib/rules/initialize-on-top", {
             errors: [ { message: "Initialize should be declared at the top." } ]
         },
         {
-            code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", args: [1, { Model: ["defaults"] }],
+            code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ Model: ["defaults"] }],
             errors: [ { message: "Initialize should be declared at the top of the view." } ]
         },
         {
-            code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
+            code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", options: [{ View: ["className", "events"] }],
             errors: [ { message: "Initialize should be declared at the top of the model." } ]
         },
         {
-            code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", args: [1, { View: ["className", "events"] }],
+            code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ View: ["className", "events"] }],
             errors: [ { message: "Initialize should be declared at the top of the collection." } ]
         }
     ]

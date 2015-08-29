@@ -8,15 +8,15 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint").linter,
-    ESLintTester = require("eslint-tester");
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/no-view-collection-models");
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/no-view-collection-models", {
+var eslintTester = new RuleTester();
+eslintTester.run("no-view-collection-models", rule, {
 
     valid: [
         "Backbone.View.extend({});",

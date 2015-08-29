@@ -8,15 +8,15 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint").linter,
-    ESLintTester = require("eslint-tester");
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/no-native-jquery");
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/no-native-jquery", {
+var eslintTester = new RuleTester();
+eslintTester.run("no-native-jquery", rule, {
 
     valid: [
         "Backbone.View.extend({});",
@@ -25,7 +25,7 @@ eslintTester.addRuleTest("lib/rules/no-native-jquery", {
         "Backbone.Model.extend({ initialize: function() { var a = $('.item').offset(); } });",
         "var a = 6 * 7;",
         "var a = $('.item').offset();",
-        { code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", args: [1, "selector"] }
+        { code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", options: ["selector"] }
     ],
 
     invalid: [
@@ -42,11 +42,11 @@ eslintTester.addRuleTest("lib/rules/no-native-jquery", {
             errors: [ { message: "Use this.$ instead of $ in views" } ]
         },
         {
-            code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", args: [1, "all"],
+            code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", options: ["all"],
             errors: [ { message: "Use this.$ instead of $ in views" } ]
         },
         {
-            code: "Backbone.View.extend({ render: function() { $('.item').show(); } });", args: [1, "selector"],
+            code: "Backbone.View.extend({ render: function() { $('.item').show(); } });", options: ["selector"],
             errors: [ { message: "Use this.$ instead of $ in views" } ]
         }
     ]

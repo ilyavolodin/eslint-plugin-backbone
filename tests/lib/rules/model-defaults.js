@@ -8,15 +8,15 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint").linter,
-    ESLintTester = require("eslint-tester");
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/model-defaults");
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new ESLintTester(eslint);
-eslintTester.addRuleTest("lib/rules/model-defaults", {
+var eslintTester = new RuleTester();
+eslintTester.run("model-defaults", rule, {
 
     valid: [
         "Backbone.Model.extend({ defaults: {}});",
