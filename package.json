@@ -1,34 +1,34 @@
 {
-    "name": "eslint-plugin-backbone",
-    "version": "1.0.3",
-    "description": "Eslint rules for Backbone.",
-    "main": "index.js",
-    "scripts": {
-        "test": "npm run lint && npm run unit-test --coverage && npm run check-coverage",
-        "lint": "eslint ./",
-        "unit-test": "istanbul test --dir build/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --recursive --reporter dot",
-        "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100 --lines 100",
-        "report-coverage-html": "istanbul report --dir  build/coverage html"
-    },
-    "devDependencies": {
-        "istanbul": "0.3.0",
-        "mocha": "1.21.4",
-        "eslint": ">=1.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/ilyavolodin/eslint-plugin-backbone.git"
-    },
-    "author": "Ilya Volodin <ivolodin@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ilyavolodin/eslint-plugin-backbone/issues"
-    },
-    "homepage": "https://github.com/ilyavolodin/eslint-plugin-backbone",
-    "keywords": [
-        "eslint-plugin",
-        "eslintplugin",
-        "backbone",
-        "eslint"
-    ]
+  "name": "eslint-plugin-backbone",
+  "version": "1.0.4",
+  "description": "Eslint rules for Backbone.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit-test --coverage && npm run check-coverage",
+    "lint": "eslint ./",
+    "unit-test": "istanbul test --dir build/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --recursive --reporter dot",
+    "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100 --lines 100",
+    "report-coverage-html": "istanbul report --dir  build/coverage html"
+  },
+  "devDependencies": {
+    "istanbul": "0.3.0",
+    "mocha": "1.21.4",
+    "eslint": ">=1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ilyavolodin/eslint-plugin-backbone.git"
+  },
+  "author": "Ilya Volodin <ivolodin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilyavolodin/eslint-plugin-backbone/issues"
+  },
+  "homepage": "https://github.com/ilyavolodin/eslint-plugin-backbone",
+  "keywords": [
+    "eslint-plugin",
+    "eslintplugin",
+    "backbone",
+    "eslint"
+  ]
 }
