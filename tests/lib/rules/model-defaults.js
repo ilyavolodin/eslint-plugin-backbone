@@ -26,7 +26,8 @@ eslintTester.run("model-defaults", rule, {
         "Backbone.Model.extend({ initialize: function() { var a = Backbone.Model.extend({ defaults: {} });}, defaults: {} });",
         "Backbone.Models.extend();",
         "var a=6 * 7;",
-        "Backbone.Model.extend({ defaults: {}, initialize: function() { alert(); } });"
+        "Backbone.Model.extend({ defaults: {}, initialize: function() { alert(); } });",
+        { code: "Model.extend({ initialize: function() { }, defaults: {} });", settings: { backbone: { Model: ["Model"] } }}
     ],
 
     invalid: [
