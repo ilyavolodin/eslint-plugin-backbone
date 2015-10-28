@@ -29,6 +29,8 @@ eslintTester.run("no-view-qualified-jquery", rule, {
         "jQuery('.some-selector');",
         "view.$('.some-selector');",
         "view.$el.find('.some-selector');",
+        "$$('.some-selector', view.el)",
+        "$('.some-selector', view.element)",
 
         // Rule should not warn if jQuery identifier is configured differently
         {

@@ -13,7 +13,10 @@
   "devDependencies": {
     "istanbul": "0.3.0",
     "mocha": "1.21.4",
-    "eslint": ">=1.0.0"
+    "eslint": "^1.4.0"
+  },
+  "peerDependencies": {
+    "eslint": "^1.4.0"
   },
   "repository": {
     "type": "git",

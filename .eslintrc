@@ -14,7 +14,7 @@
         "no-undefined": 2,
         "radix": 2,
         "space-after-keywords": [2, "always"],
-        "no-multi-spaces": 0,
+        "no-multi-spaces": 2,
         "valid-jsdoc": [2, {
             "prefer": {
                 "return": "returns"
