@@ -32,7 +32,7 @@ Backbone.View.extend({
 
 ## Options
 
-This rule accepts an array op strings that would be excluded from the check. For example, if you use `tagName` or `className` properties in your Views and would like them to be declared before `events`, you can enable this rule with the following options:
+This rule accepts an array of strings that would be excluded from the check. For example, if you use `tagName` or `className` properties in your Views and would like them to be declared before `events`, you can enable this rule with the following options:
 
 ```json
 

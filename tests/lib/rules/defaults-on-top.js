@@ -22,10 +22,22 @@ eslintTester.run("defaults-on-top", rule, {
         "Backbone.Model.extend({ defaults: {}, initialize: function() {} });",
         "Backbone.Model.extend({ });",
         "Backbone.Model.extend({ initialize: function() {} });",
-        "Backbone.Model.extend({ initialize: function() { var defaults = {}; } });"
+        "Backbone.Model.extend({ initialize: function() { var defaults = {}; } });",
+        { code: "Backbone.Model.extend({ id: 'someId', defaults: {} });", options: [["id"]] },
+        { code: "Backbone.Model.extend({ 'idAttribute': '_id', defaults: {} });", options: [["idAttribute"]] }
     ],
 
     invalid: [
+        {
+            code: "Backbone.Model.extend({ idAttribute: '_id', defaults: {} });",
+            options: [["id"]],
+            errors: [ { message: "defaults should be declared at the top of the model." }]
+        },
+        {
+            code: "Backbone.Model.extend({ 'idAttribute': '_id', defaults: {} });",
+            options: [["id"]],
+            errors: [ { message: "defaults should be declared at the top of the model." }]
+        },
         {
             code: "Backbone.Model.extend({ initialize: function() {}, defaults: {} });",
             errors: [ { message: "defaults should be declared at the top of the model." } ]
