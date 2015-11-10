@@ -18,6 +18,7 @@ module.exports = {
         "no-view-collection-models": require("./lib/rules/no-view-collection-models"),
         "no-view-model-attributes": require("./lib/rules/no-view-model-attributes"),
         "no-view-onoff-binding": require("./lib/rules/no-view-onoff-binding"),
+        "no-view-qualified-jquery": require("./lib/rules/no-view-qualified-jquery"),
         "render-return": require("./lib/rules/render-return")
     },
     rulesConfig: {
@@ -37,6 +38,7 @@ module.exports = {
         "no-view-collection-models": 2,
         "no-view-model-attributes": 2,
         "no-view-onoff-binding": 2,
+        "no-view-qualified-jquery": 0,
         "render-return": 2
     }
 };
