@@ -25,7 +25,8 @@ eslintTester.run("no-native-jquery", rule, {
         "Backbone.Model.extend({ initialize: function() { var a = $('.item').offset(); } });",
         "var a = 6 * 7;",
         "var a = $('.item').offset();",
-        { code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", options: ["selector"] }
+        { code: "Backbone.View.extend({ render: function(element) { $(element).show(); } });", options: ["selector"] },
+        { code: "Backbone.View.extend({ render: function() { var a = $('<div></div>'); } });", options: ["selector"] }
     ],
 
     invalid: [
