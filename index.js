@@ -21,24 +21,36 @@ module.exports = {
         "no-view-qualified-jquery": require("./lib/rules/no-view-qualified-jquery"),
         "render-return": require("./lib/rules/render-return")
     },
-    rulesConfig: {
-        "collection-model": 2,
-        "defaults-on-top": 1,
-        "event-scope": 1,
-        "events-on-top": [1, ["tagName", "className"]],
-        "initialize-on-top": [1, { View: ["tagName", "className", "events"], Model: ["defaults", "url", "urlRoot"], Collection: ["model", "url"] }],
-        "model-defaults": 2,
-        "no-changed-set": 2,
-        "no-collection-models": 2,
-        "no-constructor": 1,
-        "no-el-assign": 2,
-        "no-model-attributes": 2,
-        "no-native-jquery": [1, "selector"],
-        "no-silent": 1,
-        "no-view-collection-models": 2,
-        "no-view-model-attributes": 2,
-        "no-view-onoff-binding": 2,
-        "no-view-qualified-jquery": 0,
-        "render-return": 2
+    configs: {
+        recommended: {
+            env: ["browser"],
+            globals: {
+                "Backbone": false,
+                "_": false
+            },
+            plugins: [
+                "backbone"
+            ],
+            rules: {
+                "backbone/collection-model": 2,
+                "backbone/defaults-on-top": 1,
+                "backbone/event-scope": 1,
+                "backbone/events-on-top": [1, ["tagName", "className"]],
+                "backbone/initialize-on-top": [1, { View: ["tagName", "className", "events"], Model: ["defaults", "url", "urlRoot"], Collection: ["model", "url"] }],
+                "backbone/model-defaults": 2,
+                "backbone/no-changed-set": 2,
+                "backbone/no-collection-models": 2,
+                "backbone/no-constructor": 1,
+                "backbone/no-el-assign": 2,
+                "backbone/no-model-attributes": 2,
+                "backbone/no-native-jquery": [1, "selector"],
+                "backbone/no-silent": 1,
+                "backbone/no-view-collection-models": 2,
+                "backbone/no-view-model-attributes": 2,
+                "backbone/no-view-onoff-binding": 2,
+                "backbone/no-view-qualified-jquery": 0,
+                "backbone/render-return": 2
+            }
+        }
     }
 };
