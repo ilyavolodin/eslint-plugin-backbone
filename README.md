@@ -75,6 +75,7 @@ To enable bundled config modify your .eslintrc file to include the following lin
 {
     "extends": "plugin:backbone/recommended"
 }
+```
 
 This will enable all of the rules listed above, as well as add two global variables - `Backbone` and `_`.
 
