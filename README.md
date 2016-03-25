@@ -35,6 +35,10 @@ npm install eslint-plugin-backbone --save-dev
 
 ## Default configuration
 
+** Deprecated in v2 **
+
+**node:** ESLint v2 removed support for default configurations. Please see config below for details.
+
 If you are using ESLint >0.9.0 then this plugin will provide default configuration. If you are fine with defaults, you do not need to update your .eslintrc file.
 
 Defaults are currently set to the following:
@@ -56,8 +60,23 @@ Defaults are currently set to the following:
     "no-view-collection-models": 2,
     "no-view-model-attributes": 2,
     "no-view-onoff-binding": 2,
+    "no-view-qualified-jquery": 0,
     "render-return": 2
 ```
+
+## Configuration
+
+In version 2.0.0 removed support for default configurations for plugins and replaced it with ability for plugins to bundle configs. This plugin include `recommended` 
+configuration that you can extend from to enable recommended setup of the rules (see "Default configuration" for the list of enabled rules).
+
+To enable bundled config modify your .eslintrc file to include the following line:
+
+```json
+{
+    "extends": "plugin:backbone/recommended"
+}
+
+This will enable all of the rules listed above, as well as add two global variables - `Backbone` and `_`.
 
 ## Modify .eslintrc for your project
 
