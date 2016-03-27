@@ -35,9 +35,9 @@ npm install eslint-plugin-backbone --save-dev
 
 ## Default configuration
 
-** Deprecated in v2 **
+**Deprecated in v2**
 
-**node:** ESLint v2 removed support for default configurations. Please see config below for details.
+**note:** ESLint v2 removed support for default configurations. Please see config below for details.
 
 If you are using ESLint >0.9.0 then this plugin will provide default configuration. If you are fine with defaults, you do not need to update your .eslintrc file.
 
