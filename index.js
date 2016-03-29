@@ -23,7 +23,9 @@ module.exports = {
     },
     configs: {
         recommended: {
-            env: ["browser"],
+            env: {
+                browser: true
+            },
             globals: {
                 "Backbone": false,
                 "_": false
