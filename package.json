@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-backbone",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Eslint rules for Backbone.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
     "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100 --lines 100",
     "report-coverage-html": "istanbul report --dir  build/coverage html"
   },
-  "files": ["lib", "index.js"],
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "devDependencies": {
     "istanbul": "0.3.0",
     "mocha": "1.21.4",
