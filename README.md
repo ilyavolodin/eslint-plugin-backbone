@@ -66,7 +66,7 @@ Defaults are currently set to the following:
 
 ## Configuration
 
-In version 2.0.0 removed support for default configurations for plugins and replaced it with ability for plugins to bundle configs. This plugin include `recommended`
+In version 2.0.0 removed support for default configurations for plugins and replaced it with ability for plugins to bundle configs. This plugin include `recommended` 
 configuration that you can extend from to enable recommended setup of the rules (see "Default configuration" for the list of enabled rules).
 
 To enable bundled config modify your .eslintrc file to include the following line:
