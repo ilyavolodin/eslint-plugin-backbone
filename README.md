@@ -66,7 +66,7 @@ Defaults are currently set to the following:
 
 ## Configuration
 
-In version 2.0.0 removed support for default configurations for plugins and replaced it with ability for plugins to bundle configs. This plugin include `recommended` 
+In version 2.0.0 removed support for default configurations for plugins and replaced it with ability for plugins to bundle configs. This plugin include `recommended`
 configuration that you can extend from to enable recommended setup of the rules (see "Default configuration" for the list of enabled rules).
 
 To enable bundled config modify your .eslintrc file to include the following line:
@@ -129,6 +129,7 @@ If you are using custom models/view/collection bases you also have to specify ea
 * [defaults-on-top](docs/rules/defaults-on-top.md)
 * [event-scope](docs/rules/event-scope.md)
 * [events-on-top](docs/rules/events-on-top.md)
+* [events-sort](docs/rules/events-sort.md)
 * [initialize-on-top](docs/rules/initialize-on-top.md)
 * [model-defaults](docs/rules/model-defaults.md)
 * [no-changed-set](/docs/rules/no-changed-set.md)
