@@ -38,6 +38,11 @@ eslintTester.run("render-return", rule, {
         {
             code: "Backbone.View.extend({ render: function() { return; } });",
             errors: [ { message: "render method should always return 'this'" } ]
+        },
+        {
+            code: "Test.extend({ render: function() { return; } });",
+            settings: { backbone: { View: ["Test"] }},
+            errors: [ { message: "render method should always return 'this'" } ]
         }
     ]
 });
