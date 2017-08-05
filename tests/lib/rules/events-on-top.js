@@ -23,7 +23,8 @@ eslintTester.run("events-on-top", rule, {
         "Backbone.View.extend({ });",
         "Backbone.View.extend({ initialize: function() {} });",
         "Backbone.View.extend({ initialize: function() { var events = {}; } });",
-        { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {} });", options: [["tagName", "className"]] }
+        { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {} });", options: [["tagName", "className"]] },
+        "var events;"
     ],
 
     invalid: [
@@ -44,4 +45,17 @@ eslintTester.run("events-on-top", rule, {
             errors: [ { message: "events should be declared at the top of the view." } ]
         }
     ]
+});
+
+eslintTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: "module"
+    }
+});
+eslintTester.run("events-on-top", rule, {
+    valid: [
+        "export default events;"
+    ],
+    invalid: []
 });

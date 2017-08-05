@@ -28,7 +28,8 @@ eslintTester.run("initialize-on-top", rule, {
         "Backbone.View.extend({ render: function() {} });",
         { code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", options: [{ Model: ["defaults"] }] },
         { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["tagName", "className", "events"] }] },
-        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ Collection: ["model"] }] }
+        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ Collection: ["model"] }] },
+        "var initialize;"
     ],
 
     invalid: [
@@ -61,4 +62,17 @@ eslintTester.run("initialize-on-top", rule, {
             errors: [ { message: "Initialize should be declared at the top of the collection." } ]
         }
     ]
+});
+
+eslintTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: "module"
+    }
+});
+eslintTester.run("events-on-top", rule, {
+    valid: [
+        "export default initialize;"
+    ],
+    invalid: []
 });
