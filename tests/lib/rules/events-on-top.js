@@ -15,7 +15,12 @@ var rule = require("../../../lib/rules/events-on-top");
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: "module"
+    }
+});
 eslintTester.run("events-on-top", rule, {
 
     valid: [
@@ -24,7 +29,8 @@ eslintTester.run("events-on-top", rule, {
         "Backbone.View.extend({ initialize: function() {} });",
         "Backbone.View.extend({ initialize: function() { var events = {}; } });",
         { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {} });", options: [["tagName", "className"]] },
-        "var events;"
+        "var events;",
+        "export default events;"
     ],
 
     invalid: [
@@ -45,17 +51,4 @@ eslintTester.run("events-on-top", rule, {
             errors: [ { message: "events should be declared at the top of the view." } ]
         }
     ]
-});
-
-eslintTester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 8,
-        sourceType: "module"
-    }
-});
-eslintTester.run("events-on-top", rule, {
-    valid: [
-        "export default events;"
-    ],
-    invalid: []
 });
