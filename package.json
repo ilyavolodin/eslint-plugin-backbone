@@ -15,12 +15,12 @@
     "index.js"
   ],
   "devDependencies": {
-    "istanbul": "0.3.0",
-    "mocha": "1.21.4",
-    "eslint": "^2.0.0"
+    "istanbul": "~0.4.5",
+    "mocha": "~3.5.0",
+    "eslint": "^4.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=2.0.0"
+    "eslint": ">=4.0.0"
   },
   "repository": {
     "type": "git",
