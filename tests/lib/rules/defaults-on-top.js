@@ -15,7 +15,12 @@ var rule = require("../../../lib/rules/defaults-on-top");
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: "module"
+    }
+});
 eslintTester.run("defaults-on-top", rule, {
 
     valid: [
@@ -24,7 +29,9 @@ eslintTester.run("defaults-on-top", rule, {
         "Backbone.Model.extend({ initialize: function() {} });",
         "Backbone.Model.extend({ initialize: function() { var defaults = {}; } });",
         { code: "Backbone.Model.extend({ id: 'someId', defaults: {} });", options: [["id"]] },
-        { code: "Backbone.Model.extend({ 'idAttribute': '_id', defaults: {} });", options: [["idAttribute"]] }
+        { code: "Backbone.Model.extend({ 'idAttribute': '_id', defaults: {} });", options: [["idAttribute"]] },
+        "var defaults;",
+        "export default defaults;"
     ],
 
     invalid: [

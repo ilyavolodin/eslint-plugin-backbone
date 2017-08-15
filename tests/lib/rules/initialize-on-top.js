@@ -15,7 +15,12 @@ var rule = require("../../../lib/rules/initialize-on-top");
 // Tests
 //------------------------------------------------------------------------------
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: "module"
+    }
+});
 eslintTester.run("initialize-on-top", rule, {
 
     valid: [
@@ -28,7 +33,9 @@ eslintTester.run("initialize-on-top", rule, {
         "Backbone.View.extend({ render: function() {} });",
         { code: "Backbone.Model.extend({ defaults: {}, initialize: function() {} });", options: [{ Model: ["defaults"] }] },
         { code: "Backbone.View.extend({ tagName: 'div', 'className': 'test', events: {}, initialize: function() {} });", options: [{ View: ["tagName", "className", "events"] }] },
-        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ Collection: ["model"] }] }
+        { code: "Backbone.Collection.extend({ model: {}, initialize: function() {} });", options: [{ Collection: ["model"] }] },
+        "var initialize;",
+        "export default initialize;"
     ],
 
     invalid: [
