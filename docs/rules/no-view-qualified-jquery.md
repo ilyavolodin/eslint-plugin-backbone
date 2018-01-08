@@ -50,21 +50,6 @@ myJQuery('.some-selector', myJQuery(myView.$el));
 
 ```
 
-The following patterns are not considered warnings:
-
-```js
-/* eslint backbone/no-view-qualified-jquery: 2 */
-
-$('.some-selector');
-
-jQuery('.some-selector');
-
-view.$('.some-selector');
-
-view.$el.find('.some-selector');
-
-```
-
 With the `identifiers` option configured to a different value, the following pattern is not considered a warning:
 
 ```js
