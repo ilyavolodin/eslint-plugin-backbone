@@ -1,16 +1,17 @@
 /** @author https://github.com/miyasudokoro */
 
+import { defineConfig } from "eslint/config";
 import js from '@eslint/js';
-import stylistic from '@stylistic/eslint-plugin-js';
+import stylistic from '@stylistic/eslint-plugin';
 import jsdoc from 'eslint-plugin-jsdoc';
 import globals from 'globals';
 
-export default [
+export default defineConfig( [
     js.configs.recommended,
     jsdoc.configs[ 'flat/recommended' ],
     {
         'plugins': {
-            '@stylistic/js': stylistic
+            '@stylistic': stylistic
         },
         'ignores': [
             'node_modules/**',
@@ -24,7 +25,7 @@ export default [
             }
         },
         'rules': {
-            '@stylistic/js/brace-style': [
+            '@stylistic/brace-style': [
                 2,
                 '1tbs'
             ],
@@ -34,14 +35,14 @@ export default [
                 'declaration'
             ],
             'guard-for-in': 2,
-            '@stylistic/js/no-floating-decimal': 2,
+            '@stylistic/no-floating-decimal': 2,
             'no-nested-ternary': 2,
             'no-undefined': 2,
             'radix': 2,
-            '@stylistic/js/keyword-spacing': 2,
-            '@stylistic/js/no-multi-spaces': 2,
-            '@stylistic/js/wrap-iife': 2,
-            '@stylistic/js/semi': 2
+            '@stylistic/keyword-spacing': 2,
+            '@stylistic/no-multi-spaces': 2,
+            '@stylistic/wrap-iife': 2,
+            '@stylistic/semi': 2
         }
     },
     {
@@ -54,4 +55,4 @@ export default [
             }
         }
     }
-];
+] );
