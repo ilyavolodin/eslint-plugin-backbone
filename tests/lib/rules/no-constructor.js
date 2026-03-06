@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent overloading of constructor
+ * @file Prevent overloading of constructor
  * @author Ilya Volodin
  */
 "use strict";

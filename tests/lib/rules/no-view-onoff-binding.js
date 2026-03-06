@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent using on/off bindings inside views
+ * @file Prevent using on/off bindings inside views
  * @author Ilya Volodin
  * @copyright 2015 Ilya Volodin. All rights reserved.
  */

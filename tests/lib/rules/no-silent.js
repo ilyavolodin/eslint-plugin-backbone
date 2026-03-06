@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent using silent option in functions that cause events
+ * @file Prevent using silent option in functions that cause events
  * @author Ilya Volodin
  * @copyright 2014 Ilya Volodin. All rights reserved.
  */

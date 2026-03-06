@@ -1,5 +1,5 @@
 /**
- * @fileoverview Events should be the first thing registered in the View
+ * @file Events should be the first thing registered in the View
  * @author Ilya Volodin
  */
 "use strict";
@@ -16,7 +16,7 @@ var rule = require("../../../lib/rules/events-on-top");
 //------------------------------------------------------------------------------
 
 var eslintTester = new RuleTester({
-    parserOptions: {
+    languageOptions: {
         ecmaVersion: 8,
         sourceType: "module"
     }

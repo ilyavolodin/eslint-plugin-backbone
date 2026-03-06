@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent usage of $ in the views
+ * @file Prevent usage of $ in the views
  * @author Ilya Volodin
  */
 "use strict";

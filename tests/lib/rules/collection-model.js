@@ -1,5 +1,5 @@
 /**
- * @fileoverview Require all collections to declare model
+ * @file Require all collections to declare model
  * @author Ilya Volodin
  */
 "use strict";

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Event names in event hash should be sorted alphabetically
+ * @file Event names in event hash should be sorted alphabetically
  * @author Frederik Ring
  */
 "use strict";

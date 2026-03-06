@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent assigning el or $el inside views
+ * @file Prevent assigning el or $el inside views
  * @author Ilya Volodin
  */
 "use strict";

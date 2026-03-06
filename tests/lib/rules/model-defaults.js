@@ -1,5 +1,5 @@
 /**
- * @fileoverview require all models to have defaults section
+ * @file require all models to have defaults section
  * @author Ilya Volodin
  */
 "use strict";

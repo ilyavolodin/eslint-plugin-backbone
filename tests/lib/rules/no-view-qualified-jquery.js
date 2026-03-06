@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent usage of native jQuery scoped to view elements
+ * @file Prevent usage of native jQuery scoped to view elements
  * @author Kevin Partington
  */
 "use strict";
@@ -17,6 +17,11 @@ var rule = require("../../../lib/rules/no-view-qualified-jquery");
 
 var ERROR_TEMPLATE = "Use {{placeholder}}.$ or {{placeholder}}.$el.find instead of view-scoped native jQuery";
 
+/**
+ *
+ * @param {string} identifier - the identifier to put in the error message
+ * @returns {string} the error message
+ */
 function createErrorMessage(identifier) {
     return ERROR_TEMPLATE.replace(/\{\{placeholder\}\}/g, identifier);
 }

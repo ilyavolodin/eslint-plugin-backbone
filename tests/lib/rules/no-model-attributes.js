@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent access to attributes collection inside models
+ * @file Prevent access to attributes collection inside models
  * @author Ilya Volodin
  */
 "use strict";

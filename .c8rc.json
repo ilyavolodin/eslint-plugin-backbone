@@ -1,0 +1,14 @@
+{
+    "all": true,
+    "exclude-node-modules": true,
+    "include": [ "lib/**" ],
+    "exclude": [ "**.config.*", "index.mjs" ],
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100,
+    "branches": 100,
+    "reporter": "html",
+    "report-dir": "./reports/coverage"
+}

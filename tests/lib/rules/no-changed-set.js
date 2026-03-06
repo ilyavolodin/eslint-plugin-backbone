@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent setting changed attribute of the model in views
+ * @file Prevent setting changed attribute of the model in views
  * @author Ilya Volodin
  */
 "use strict";

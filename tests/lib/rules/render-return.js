@@ -1,5 +1,5 @@
 /**
- * @fileoverview Enforces render function to always return this
+ * @file Enforces render function to always return this
  * @author Ilya Volodin
  * @copyright 2014 Ilya Volodin. All rights reserved.
  */

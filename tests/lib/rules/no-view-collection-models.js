@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prevent access to collection's models property inside views
+ * @file Prevent access to collection's models property inside views
  * @author Ilya Volodin
  */
 "use strict";

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Verify that scope is passed into event handlers
+ * @file Verify that scope is passed into event handlers
  * @author Ilya Volodin
  */
 "use strict";
